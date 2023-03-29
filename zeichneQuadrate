@@ -1,0 +1,12 @@
+void setup() {
+  int wieviele = 10;
+  for (int i = 0; i < wieviele; i++) {
+  rect(10+i*10,10,10,10);
+  }
+}
+
+
+void render() {
+size(128,128);
+setup();
+}
