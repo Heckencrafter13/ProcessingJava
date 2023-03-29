@@ -1,0 +1,12 @@
+void setup() {
+  int wieviele = 20;
+  for(int i=wieviele;i>0;i--) {
+  ellipse(width/2,height/2,i*10,i*10);
+  }
+}
+
+
+void render() {
+size(400,400);
+setup();
+}
