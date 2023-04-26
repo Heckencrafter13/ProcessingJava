@@ -1,0 +1,45 @@
+void balken() {
+  for(int i = 0; i <= 7; i++) {
+    fill(0);
+    quad(20+80*i,0,  60+80*i,0,  60+80*i,height, 20+80*i,height);
+  }
+}
+
+float[] verschiebung = {0,1,0,1};
+
+void waagerechteBalken() {
+  for(int i = 0; i < 16; i++) {
+    for(int j = 0; j < 4; j++) {
+      fill(0,20,120);
+      noStroke();
+      rect(0+80*i+40*verschiebung[j],25+95*j,40,40); //dunkles quadrat
+      fill(50,70,255);
+      rect(40+80*i-40*verschiebung[j],25+95*j,40,40); //helles quadrat
+    }
+  }
+}
+
+int[] abst = {0,40,95,135,190,230,285,325};
+
+void bwquads() {
+  for(int i = 0; i < 15; i++) { 
+    for(int j = 0; j < 8; j++) {
+    fill(0);
+    quad(20+40*i,25+abst[j],  15+40*i,20+abst[j],  20+40*i,15+abst[j],  25+40*i,20+abst[j]);
+    quad(20+40*i,25+abst[j],  25+40*i,30+abst[j],  20+40*i,35+abst[j], 15+40*i,30+abst[j]);
+    fill(255);
+    quad(20+40*i,25+abst[j],  25+40*i,20+abst[j], 30+40*i,25+abst[j],  25+40*i,30+abst[j]);
+    quad(20+40*i,25+abst[j],  15+40*i,30+abst[j],  10+40*i, 25+abst[j],  15+40*i,20+abst[j]);
+
+    }
+  }
+}
+
+
+void setup() {
+size(600,360);
+background(255);
+balken();
+waagerechteBalken();
+bwquads();
+}
